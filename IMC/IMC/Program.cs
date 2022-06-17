@@ -26,6 +26,7 @@ namespace IMC
                 nome = Console.ReadLine();
                 if (Funcoes.ValidaNome(nome))
                 {
+                    pessoa.Nome = nome;
                     validaNome = false;
                 }
                 else
@@ -57,7 +58,7 @@ namespace IMC
             string idade = "";
             while (validadeIdade)
             {
-                Console.WriteLine("Informe sua idade: ");
+                Console.WriteLine("Informe sua idade: (Padrão 000)");
                 idade = Console.ReadLine();
                 if (Funcoes.ValidaIdade(idade))
                 {
@@ -75,7 +76,7 @@ namespace IMC
             string altura = "";
             while (validadadeAltura)
             {
-                Console.WriteLine("Informe sua altura em metros: ");
+                Console.WriteLine("Informe sua altura em metros: (Padrão 0,00)");
                 altura = Console.ReadLine();
                 if (Funcoes.ValidaAltura(altura))
                 {
@@ -84,7 +85,7 @@ namespace IMC
                 }
                 else
                 {
-                    Console.WriteLine("Altura invalida (Digite uma altura entre 0 e 2,50 metros): ");
+                    Console.WriteLine("Altura invalida (Digite uma altura entre 0,00 e 2,50 metros): ");
                 }
             }
 
@@ -93,7 +94,7 @@ namespace IMC
             string peso = "";
             while (validadePeso)
             {
-                Console.WriteLine("Informe seu peso: ");
+                Console.WriteLine("Informe seu peso: (Padrão 00,00)");
                 peso = Console.ReadLine();
                 if (Funcoes.ValidaPeso(peso))
                 {
@@ -102,35 +103,36 @@ namespace IMC
                 }
                 else
                 {
-                    Console.WriteLine("Peso invalido, informe um peso entre 0 e 500 kilos");
+                    Console.WriteLine("Peso invalido, informe um peso entre 0,00 e 500,00 kilos");
                 }
             }
 
             //verificar a categoria da pessoa
             string categoria = pessoa.Categoria[Funcoes.VerificarCategoria(pessoa.Idade)];
 
-            //informações coletadas - começar os Calculos/Apresentação
-                      
 
-            Console.WriteLine(String.Format("|{0,50} |", "--------------------------------------------------"));
-            Console.WriteLine(String.Format("|{0,50} |", "DIAGNÓSTICO PRÉVIO       "));
-            Console.WriteLine(String.Format("|{0,50} |", " "));
-            Console.WriteLine(String.Format("|{0,10} {1,40}|", " Nome:", pessoa.Nome));
-            Console.WriteLine(String.Format("|{0,10} {1,40}|", " Sexo:", pessoa.Sexo));
-            Console.WriteLine(String.Format("|{0,10} {1,40}|", " Idade:", pessoa.Idade));
-            Console.WriteLine(String.Format("|{0,10} {1,40}|", " Altura:", pessoa.Altura));
-            Console.WriteLine(String.Format("|{0,10} {1,40}|", " Peso:", pessoa.Peso));
-            Console.WriteLine(String.Format("|{0,10} {1,40}|", " Categoria:", categoria));
-            Console.WriteLine(String.Format("|{0,50} |", " "));
-            Console.WriteLine(String.Format("|{0,50} |", " "));
-            Console.WriteLine(String.Format("|{0,10} {1,40}|", "IMC Desejável: entre 20 e 24       "));
-            Console.WriteLine(String.Format("|{0,50} |", " "));
-            Console.WriteLine(String.Format("|{0,10} {1,40}|", " Resultado IMC:", Funcoes.CalculoImc(pessoa.Peso, pessoa.Altura).ToString("F")));
-            Console.WriteLine(String.Format("|{0,50} |", " "));
-            Console.WriteLine(String.Format("|{0,10} {1,40}|", " Riscos:", Funcoes.MostrarRiscos(Funcoes.CalculoImc(pessoa.Peso, pessoa.Altura))));
-            Console.WriteLine(String.Format("|{0,50} |", " "));
-            Console.WriteLine(String.Format("|{0,10} {1,40}|", " Recomendações:", Funcoes.MostrarRecomendacoes(Funcoes.CalculoImc(pessoa.Peso, pessoa.Altura))));
-            Console.WriteLine(String.Format("|{0,50} |", "--------------------------------------------------"));
+
+            //informações coletadas - começar os Calculos/Apresentação
+            
+            Console.WriteLine(String.Format("|{0,60} |", "____________________________________________________________"));
+            Console.WriteLine(String.Format("|{0,60} |", "DIAGNÓSTICO PRÉVIO       "));
+            Console.WriteLine(String.Format("|{0,60} |", " "));
+            Console.WriteLine(String.Format("|{0,10} {1,50}|", " Nome:", pessoa.Nome));
+            Console.WriteLine(String.Format("|{0,10} {1,50}|", " Sexo:", pessoa.Sexo));
+            Console.WriteLine(String.Format("|{0,10} {1,50}|", " Idade:", pessoa.Idade));
+            Console.WriteLine(String.Format("|{0,10} {1,50}|", " Altura:", pessoa.Altura));
+            Console.WriteLine(String.Format("|{0,10} {1,50}|", " Peso:", pessoa.Peso));
+            Console.WriteLine(String.Format("|{0,10} {1,50}|", " Categoria:", categoria));
+            Console.WriteLine(String.Format("|{0,60} |", "   "));
+            Console.WriteLine(String.Format("|{0,60} |", "   "));
+            Console.WriteLine(String.Format("|{0,60} |", "IMC Desejável: entre 20 e 24 "));
+            Console.WriteLine(String.Format("|{0,60} |", " "));
+            Console.WriteLine(String.Format("|{0,10} {1,30}|", "Resultado IMC:", Funcoes.CalculoImc(pessoa.Peso, pessoa.Altura).ToString("F")));
+            Console.WriteLine(String.Format("|{0,60} |", " "));
+            Console.WriteLine(String.Format("|{0,10} {1,10}|", "Riscos:", Funcoes.MostrarRiscos(Funcoes.CalculoImc(pessoa.Peso, pessoa.Altura))));
+            Console.WriteLine(String.Format("|{0,60} |", " "));
+            Console.WriteLine(String.Format("|{0,10} {1,10}|", "Recomendações:", Funcoes.MostrarRecomendacoes(Funcoes.CalculoImc(pessoa.Peso, pessoa.Altura))));
+            Console.WriteLine(String.Format("|{0,60} |", "____________________________________________________________"));
 
 
             ////apresentação dos dados
