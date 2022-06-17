@@ -7,10 +7,17 @@ namespace IMC
     {
         static void Main(string[] args)
         {
+            Console.BackgroundColor = ConsoleColor.Magenta;
+            Console.ForegroundColor = ConsoleColor.White;
 
             Console.WriteLine(String.Format("|{0,50}|", "**********************************************"));
             Console.WriteLine(String.Format("|{0,50}|", "*          Vamos calcular seu IMC ?!?        *"));
             Console.WriteLine(String.Format("|{0,50}|", "**********************************************"));
+            //layout
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.White;
 
             //Declaração da classe pessoa
             Pessoa pessoa = new Pessoa();
@@ -111,54 +118,39 @@ namespace IMC
             string categoria = pessoa.Categoria[Funcoes.VerificarCategoria(pessoa.Idade)];
 
 
+            //layout
+            Console.WriteLine("");
+            Console.WriteLine("");
 
             //informações coletadas - começar os Calculos/Apresentação
-            
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine(String.Format("|{0,60} |", "____________________________________________________________"));
             Console.WriteLine(String.Format("|{0,60} |", "DIAGNÓSTICO PRÉVIO       "));
             Console.WriteLine(String.Format("|{0,60} |", " "));
-            Console.WriteLine(String.Format("|{0,10} {1,50}|", " Nome:", pessoa.Nome));
-            Console.WriteLine(String.Format("|{0,10} {1,50}|", " Sexo:", pessoa.Sexo));
-            Console.WriteLine(String.Format("|{0,10} {1,50}|", " Idade:", pessoa.Idade));
-            Console.WriteLine(String.Format("|{0,10} {1,50}|", " Altura:", pessoa.Altura));
-            Console.WriteLine(String.Format("|{0,10} {1,50}|", " Peso:", pessoa.Peso));
-            Console.WriteLine(String.Format("|{0,10} {1,50}|", " Categoria:", categoria));
+            Console.WriteLine(String.Format("|{0,10} {1,50}|", "Nome:", pessoa.Nome));
+            Console.WriteLine(String.Format("|{0,10} {1,50}|", "Sexo:", pessoa.Sexo));
+            Console.WriteLine(String.Format("|{0,10} {1,50}|", "Idade:", pessoa.Idade));
+            Console.WriteLine(String.Format("|{0,10} {1,50}|", "Altura:", pessoa.Altura));
+            Console.WriteLine(String.Format("|{0,10} {1,50}|", "Peso:", pessoa.Peso));
+            Console.WriteLine(String.Format("|{0,10} {1,45}|", "Categoria:", categoria));
             Console.WriteLine(String.Format("|{0,60} |", "   "));
             Console.WriteLine(String.Format("|{0,60} |", "   "));
-            Console.WriteLine(String.Format("|{0,60} |", "IMC Desejável: entre 20 e 24 "));
+            Console.WriteLine(String.Format("|{0,60} |", "IMC Desejável: entre 20 e 24                              "));
             Console.WriteLine(String.Format("|{0,60} |", " "));
-            Console.WriteLine(String.Format("|{0,10} {1,30}|", "Resultado IMC:", Funcoes.CalculoImc(pessoa.Peso, pessoa.Altura).ToString("F")));
+            Console.WriteLine(String.Format("|{0,10} {1,45}|", "Resultado IMC:", Funcoes.CalculoImc(pessoa.Peso, pessoa.Altura).ToString("F")));
             Console.WriteLine(String.Format("|{0,60} |", " "));
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine(String.Format("|{0,10} {1,10}|", "Riscos:", Funcoes.MostrarRiscos(Funcoes.CalculoImc(pessoa.Peso, pessoa.Altura))));
             Console.WriteLine(String.Format("|{0,60} |", " "));
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(String.Format("|{0,10} {1,10}|", "Recomendações:", Funcoes.MostrarRecomendacoes(Funcoes.CalculoImc(pessoa.Peso, pessoa.Altura))));
             Console.WriteLine(String.Format("|{0,60} |", "____________________________________________________________"));
-
-
-            ////apresentação dos dados
-            //Console.WriteLine("---------------------------------------------------------------------------------");
-            //Console.WriteLine("|                               DIAGNÓSTICO PRÉVIO                              |");
-            //Console.WriteLine("|                                                                               |");
-            //Console.WriteLine("| Nome: " + pessoa.Nome + "                                                                    |");
-            //Console.WriteLine("| Sexo: " + pessoa.Sexo + "                                                                    |");
-            //Console.WriteLine("| Idade: " + pessoa.Idade + "                                                                  |");
-            //Console.WriteLine("| Altura: " + pessoa.Altura + "                                                                |");
-            //Console.WriteLine("| Peso: " + pessoa.Peso + "                                                                    |");
-            //Console.WriteLine("| Categoria: " + categoria + "                                                     |");
-            //Console.WriteLine("|                                                                               | ");
-            //Console.WriteLine("|                                                                               | ");
-            //Console.WriteLine("| IMC Desejável: " + "                                                           |");
-            //Console.WriteLine("|                                                                                |");
-            //Console.WriteLine("| Resultado IMC: " + Funcoes.CalculoImc(pessoa.Peso, pessoa.Altura).ToString("F") + "                                                     |");
-            //Console.WriteLine("|                                                                                |");
-            //Console.WriteLine("| Riscos: " + Funcoes.MostrarRiscos(Funcoes.CalculoImc(pessoa.Peso, pessoa.Altura)));
-            //Console.WriteLine("|                                                                                |");
-            //Console.WriteLine("| Recomendações: " + Funcoes.MostrarRiscos(Funcoes.CalculoImc(pessoa.Peso, pessoa.Altura)));
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.White;
 
         }
-
-
     }
-
-
 }

@@ -109,7 +109,7 @@ namespace IMC
         {
             if (imc <= 20)
             {
-                return "Muitas complicações de saúde como doenças pulmonares e '\n' cardiovasculares podem estar associadas ao baixo peso. ";
+                return "Muitas complicações de saúde como doenças '\n' pulmonares e cardiovasculares podem estar '\n' associadas ao baixo peso. ";
             }
             else if (imc >= 20 && imc <= 24)
             {
@@ -117,7 +117,7 @@ namespace IMC
             }
             else if (imc >= 25 && imc <= 29)
             {
-                return "Aumento de peso apresenta risco moderado '\n' para outras doenças crônicas e cardiovasculares.";
+                return "Aumento de peso apresenta risco moderado '\n' para outras doenças crônicas '\n' e cardiovasculares.";
             }
             else if (imc >= 30 && imc <= 35)
             {
@@ -133,7 +133,7 @@ namespace IMC
         {
             if (imc <= 20)
             {
-                return "Inclua carboidratos simples em sua dieta, além de proteínas - indispensáveis '\n' para ganho de massa magra. Procure um profissional.";
+                return "Inclua carboidratos simples em sua dieta, '\n' além de proteínas - indispensáveis para ganho '\n' de massa magra. Procure um profissional.";
             }
             else if (imc >= 20 && imc <= 24)
             {
@@ -141,7 +141,7 @@ namespace IMC
             }
             else if (imc >= 25 && imc <= 29)
             {
-                return "Adote um tratamento baseado em dieta balanceada, exercício físico e medicação. '\n' A ajuda de um profissional pode ser interessante";
+                return "Adote um tratamento baseado em dieta '\n' balanceada, exercício físico e medicação. '\n' A ajuda de um profissional pode ser interessante";
             }
             else if (imc >= 30 && imc <= 35)
             {
@@ -149,7 +149,7 @@ namespace IMC
             }
             else
             {
-                return "Procure com urgência o acompanhamento de um nutricionista para '\n' realizar reeducação alimentar, um psicólogo e '\n' um médico especialista(endócrino).";
+                return "Procure com urgência o acompanhamento de'\n' um nutricionista para realizar reeducação alimentar, um psicólogo e '\n' um médico especialista(endócrino).";
             }
         }
     }
