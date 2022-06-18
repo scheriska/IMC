@@ -11,6 +11,8 @@ namespace IMC
     {
         public static bool ValidaNome(string nome)
         {
+            //Validação com o Regex(expressão regular - procurar de forma mais expecifica um padrão
+            //(muito usado em validação de CEP, telefone etc....)
             Regex regex = new Regex(@"^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\s]+$");
             return regex.IsMatch(nome);
         }
@@ -59,6 +61,7 @@ namespace IMC
             {
                 if (double.Parse(altura) <= 2.50 && double.Parse(altura) > 0)
                 {
+
                     return true;
                 }
             }
@@ -71,7 +74,7 @@ namespace IMC
             bool result = r.IsMatch(peso);
             if (result)
             {
-                if (double.Parse(peso) <= 500 && double.Parse(peso) > 0)
+                if (double.Parse(peso) <= 500 && double.Parse(peso) > 1)
                 {
                     return true;
                 }
@@ -107,19 +110,19 @@ namespace IMC
 
         public static string MostrarRiscos(double imc)
         {
-            if (imc <= 20)
+            if (imc <= 19.99)
             {
                 return "Muitas complicações de saúde como doenças '\n' pulmonares e cardiovasculares podem estar '\n' associadas ao baixo peso. ";
             }
-            else if (imc >= 20 && imc <= 24)
+            else if (imc >= 20.00 && imc <= 24.99)
             {
                 return "Seu peso está ideal para suas referências.";
             }
-            else if (imc >= 25 && imc <= 29)
+            else if (imc >= 25.00 && imc <= 29.99)
             {
                 return "Aumento de peso apresenta risco moderado '\n' para outras doenças crônicas '\n' e cardiovasculares.";
             }
-            else if (imc >= 30 && imc <= 35)
+            else if (imc >= 30.00 && imc <= 35.99)
             {
                 return "Quem tem obesidade vai estar mais '\n' exposto a doenças graves e ao risco de mortalidade.";
             }
@@ -131,19 +134,19 @@ namespace IMC
 
         public static string MostrarRecomendacoes(double imc)
         {
-            if (imc <= 20)
+            if (imc <= 19.99)
             {
                 return "Inclua carboidratos simples em sua dieta, '\n' além de proteínas - indispensáveis para ganho '\n' de massa magra. Procure um profissional.";
             }
-            else if (imc >= 20 && imc <= 24)
+            else if (imc >= 20.00 && imc <= 24.99)
             {
                 return "Mantenha uma dieta saudável e '\n' faça seus exames periódicos.";
             }
-            else if (imc >= 25 && imc <= 29)
+            else if (imc >= 25.00 && imc <= 29.99)
             {
                 return "Adote um tratamento baseado em dieta '\n' balanceada, exercício físico e medicação. '\n' A ajuda de um profissional pode ser interessante";
             }
-            else if (imc >= 30 && imc <= 35)
+            else if (imc >= 30.00 && imc <= 35.99)
             {
                 return "Adote uma dieta alimentar rigorosa, com o acompanhamento de '\n' um nutricionista e um médico especialista(endócrino).";
             }
