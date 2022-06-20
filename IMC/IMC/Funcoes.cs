@@ -23,20 +23,17 @@ namespace IMC
             bool result = regex.IsMatch(sexo);
             if (result)
             {
-                if (sexo.ToLower() == "f" || sexo.ToLower() == "m")
+                if (sexo.ToLower() == "f")
                 {
-                    if (sexo.ToLower() == "f")
-                    {
-                        return "Feminino";
-                    }
+                    return "Feminino";
+                }
+                if (sexo.ToLower() == "m")
+                {
                     return "Masculino";
                 }
-                return "Erro";
+                
             }
-            else
-            {
-                return "Erro";
-            }
+            return "Erro";
         }
 
         public static bool ValidaIdade(string idade)

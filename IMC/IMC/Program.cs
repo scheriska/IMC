@@ -7,17 +7,8 @@ namespace IMC
     {
         static void Main(string[] args)
         {
-            Console.BackgroundColor = ConsoleColor.Magenta;
-            Console.ForegroundColor = ConsoleColor.White;
-
-            Console.WriteLine(String.Format("|{0,40}|", "**********************************************"));
-            Console.WriteLine(String.Format("|{0,40}|", "*          Vamos calcular seu IMC ?!?        *"));
-            Console.WriteLine(String.Format("|{0,40}|", "**********************************************"));
-            //layout
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.White;
+            //inicio do programa
+            InicioAqui();
 
             //Declaração da classe pessoa
             Pessoa pessoa = new Pessoa();
@@ -37,17 +28,31 @@ namespace IMC
             //PESO
             pessoa.Peso = PerguntarPeso();
 
-            //layout
-            Console.WriteLine("");
-            Console.WriteLine("");
-
-            //informações coletadas - começar os Calculos/Apresentação
-            Console.BackgroundColor = ConsoleColor.Cyan;
-            Console.ForegroundColor = ConsoleColor.Black;
+             
+            //informações coletadas - começar os Calculos/Apresentação            
             Apresentacao(pessoa);
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.White;
 
+        }
+
+
+
+
+        public static void InicioAqui()
+        {
+            //layout
+            Console.BackgroundColor = ConsoleColor.Magenta;
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.WriteLine(String.Format("|{0,40}|", "**********************************************"));
+            Console.WriteLine(String.Format("|{0,40}|", "*          Vamos calcular seu IMC ?!?        *"));
+            Console.WriteLine(String.Format("|{0,40}|", "**********************************************"));
+
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         public static string PerguntarNome()
@@ -76,7 +81,7 @@ namespace IMC
             while (validadeSexo)
             {
                 Console.WriteLine("Informe seu SEXO: F para FEMININO e M para MASCULINO");
-                //valida o que foi digita
+                //valida o que foi digitado
                 string validaSexo = Funcoes.ValidaSexo(Console.ReadLine());
                 if (validaSexo == "Erro")
                 {
@@ -158,6 +163,10 @@ namespace IMC
 
         public static void Apresentacao(Pessoa pessoa)
         {
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine(String.Format("|{0,60}|", "*************************************************************"));
             Console.WriteLine(String.Format("|{0,60} |", "DIAGNÓSTICO PRÉVIO                                     "));
             Console.WriteLine(String.Format("|{0,60} |", " "));

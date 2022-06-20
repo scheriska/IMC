@@ -15,14 +15,6 @@ namespace IMC
         double peso;
         string[] categoria = { "Infantil", "Juvenil", "Adulto", "Idoso"  };
 
-        public Pessoa(string nome, string sexo, int idade, double altura, double peso)
-        {
-            this.nome = nome;
-            this.sexo = sexo;
-            this.idade = idade;
-            this.altura = altura;
-            this.peso = peso;
-        }
         public Pessoa()
         {
         }
