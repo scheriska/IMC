@@ -12,7 +12,7 @@ namespace IMC
         public static bool ValidaNome(string nome)
         {
             //Validação com o Regex(expressão regular - procurar de forma mais expecifica um padrão
-            //(muito usado em validação de CEP, telefone etc....)
+            //(muito usado em validação de CEP, telefone, email etc....)
             Regex regex = new Regex(@"^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\s]+$");
             return regex.IsMatch(nome);
         }
@@ -71,7 +71,7 @@ namespace IMC
             bool result = r.IsMatch(peso);
             if (result)
             {
-                if (double.Parse(peso) <= 500 && double.Parse(peso) > 1)
+                if (double.Parse(peso) <= 500 && double.Parse(peso) >= 1)
                 {
                     return true;
                 }
@@ -85,8 +85,13 @@ namespace IMC
             return imc;
         }
 
+        /// <summary>
+        /// Retorna o indice para o campo categoria
+        /// </summary>
+        /// <param name="idade">idade</param>
+        /// <returns></returns>
         public static int VerificarCategoria(int idade)
-        {
+        {            
             if (idade <= 12)
             {
                 return 0;

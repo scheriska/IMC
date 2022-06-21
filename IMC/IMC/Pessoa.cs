@@ -8,6 +8,9 @@ namespace IMC
 {
     internal class Pessoa
     {
+        /// <summary>
+        /// Classe de obejto Pesssoa
+        /// </summary>
         string nome;
         string sexo;
         int idade;
